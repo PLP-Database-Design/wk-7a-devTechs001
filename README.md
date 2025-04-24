@@ -15,12 +15,12 @@
 ---
 
 
-## 📝 Submission Instructions  
-📂 Write all your SQL queries in the **answers.sql** file.  
-✍️ Answer each question concisely and make sure your queries are clear and correct.  
+## 📝 Submission Instructions
+📂 Write all your SQL queries in the **answers.sql** file.
+✍️ Answer each question concisely and make sure your queries are clear and correct.
 🗣️ Structure your responses clearly, and use comments if necessary to explain your approach.
 
---- 
+---
 
 ## 📚 Assignment Questions
 
@@ -40,7 +40,7 @@ Task:
 - In the table above, the **Products column** contains multiple values, which violates **1NF**.
 - **Write an SQL query** to transform this table into **1NF**, ensuring that each row represents a single product for an order
 
---- 
+---
 
 ### Question 2 Achieving 2NF (Second Normal Form) 🧩
 
@@ -55,9 +55,33 @@ Task:
 | 102     | Jane Smith    | Mouse        | 2        |
 | 103     | Emily Clark   | Phone        | 1        |
 
-- In the table above, the **CustomerName** column depends on **OrderID** (a partial dependency), which violates **2NF**. 
+- In the table above, the **CustomerName** column depends on **OrderID** (a partial dependency), which violates **2NF**.
 
 - Write an SQL query to transform this table into **2NF** by removing partial dependencies. Ensure that each non-key column fully depends on the entire primary key.
 
 ---
-Good luck 🚀
+
+##  Completed Work
+
+The assignment has been completed with the following solutions:
+
+### Solution for Question 1 (1NF)
+- Created a normalized table structure that eliminates multi-valued attributes
+- Split the Products column into individual rows to ensure atomic values
+- Each row now represents a single product for an order
+
+### Solution for Question 2 (2NF)
+- Decomposed the OrderDetails table into two separate tables:
+  1. Orders table: Contains OrderID (primary key) and CustomerName
+  2. OrderItems table: Contains OrderID, Product, and Quantity
+- Removed partial dependencies by ensuring CustomerName only appears once per OrderID
+- Established proper relationships between tables using primary and foreign keys
+
+### Key Normalization Concepts Applied
+- **1NF**: Eliminated repeating groups, ensured atomic values
+- **2NF**: Removed partial dependencies
+- **3NF**: Ensured no transitive dependencies exist
+
+All SQL queries have been implemented in the **answers.sql** file with detailed comments explaining each step of the normalization process.
+
+
